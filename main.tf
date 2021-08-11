@@ -10,8 +10,24 @@
 provider "digitalocean" {
 }
 
-data "digitalocean_account" "account_info" {}
-
-output "droplet_limit" {
-    value = data.digitalocean_account.account_info.droplet_limit
+resource "digitalocean_database_db" "database-example" {
+  cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
+  name       = "foobar2"
 }
+
+resource "digitalocean_database_cluster" "developer-productivity-cluster" {
+  name       = "example-developer-productivity-cluster"
+  engine     = "pg"
+  version    = "11"
+  size       = "db-s-1vcpu-1gb"
+  region     = "sfo2"
+  node_count = 1
+}
+
+
+
+# data "digitalocean_account" "account_info" {}
+
+# output "droplet_limit" {
+#     value = data.digitalocean_account.account_info.droplet_limit
+# }
