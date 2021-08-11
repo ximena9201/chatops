@@ -1,4 +1,4 @@
-name: Deployment Terraform
+name: Terraform Github Actions
 
 on: 
   push
