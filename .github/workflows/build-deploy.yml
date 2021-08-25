@@ -27,6 +27,12 @@ jobs:
           tf_actions_version: 0.12.18
           tf_actions_subcommand: 'plan'
           tf_actions_cli_credentials_token: ${{ secrets.TF_API_TOKEN }}
-          # args: '-backend-config="token=${{ secrets.TF_DIGITALOCEAN_TOKEN }}"'          
+          # args: '-backend-config="token=${{ secrets.TF_DIGITALOCEAN_TOKEN }}"'  
+      - name: 'Terraform Apply'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.18
+          tf_actions_subcommand: 'apply'
+          tf_actions_cli_credentials_token: ${{ secrets.TF_API_TOKEN }}        
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
