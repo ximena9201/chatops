@@ -6,13 +6,18 @@
 #     }
 #   }
 # }
+variable "do_token" {}
 
 provider "digitalocean" {
+  token = var.do_token
 }
+
+
+
 
 resource "digitalocean_database_db" "database-example" {
   cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
-  name       = "foobar2"
+  name       = "foobar3"
 }
 
 resource "digitalocean_database_cluster" "developer-productivity-cluster" {
