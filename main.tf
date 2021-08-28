@@ -15,9 +15,9 @@ provider "digitalocean" {
 
 
 
-resource "digitalocean_database_db" "database-example" {
+resource "digitalocean_database_db" "database" {
   cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
-  name       = "database-${random_string.random}"
+  name       = "database-${random_pet.name.id}"
 }
 
 resource "digitalocean_database_cluster" "developer-productivity-cluster" {
@@ -29,10 +29,8 @@ resource "digitalocean_database_cluster" "developer-productivity-cluster" {
   node_count = 1
 }
 
-resource "random_string" "random" {
-  length           = 16
-  special          = true
-  override_special = "/@£$"
+resource "random_pet" "name" {
+  length   = 4
 }
 
 # data "digitalocean_account" "account_info" {}
