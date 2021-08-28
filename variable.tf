@@ -1,4 +1,1 @@
-variable "do_token" {
-    description = "Token API to DO"
-    default = {}
-}
+variable "do_token" {}
