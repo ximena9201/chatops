@@ -17,7 +17,7 @@ provider "digitalocean" {
 
 resource "digitalocean_database_db" "database-example" {
   cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
-  name       = "foobar3"
+  name       = var.data_product_name
 }
 
 resource "digitalocean_database_cluster" "developer-productivity-cluster" {
