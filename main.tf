@@ -17,19 +17,23 @@ provider "digitalocean" {
 
 resource "digitalocean_database_db" "database-example" {
   cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
-  name       = "database_name"
+  name       = "${random_string}-database"
 }
 
-# resource "digitalocean_database_cluster" "developer-productivity-cluster" {
-#   name       = "example-developer-productivity-cluster"
-#   engine     = "pg"
-#   version    = "11"
-#   size       = "db-s-1vcpu-1gb"
-#   region     = "sfo2"
-#   node_count = 1
-# }
+resource "digitalocean_database_cluster" "developer-productivity-cluster" {
+  name       = "example-developer-productivity-cluster"
+  engine     = "pg"
+  version    = "11"
+  size       = "db-s-1vcpu-1gb"
+  region     = "sfo2"
+  node_count = 1
+}
 
-
+resource "random_string" "random" {
+  length           = 16
+  special          = true
+  override_special = "/@£$"
+}
 
 # data "digitalocean_account" "account_info" {}
 
