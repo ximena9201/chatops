@@ -1,5 +1,5 @@
 variable "do_token" {}
 
-variable "database_name" {
-    type = string 
-}
+# variable "database_name" {
+#     type = string 
+# }
