@@ -16,24 +16,30 @@ provider "digitalocean" {
 
 
 resource "digitalocean_database_db" "database" {
-  cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
+  cluster_id = data.digitalocean_database_cluster.developer-productivity-cluster.id
   name       = "database-${random_pet.name.id}"
 }
 
-resource "digitalocean_database_cluster" "developer-productivity-cluster" {
-  name       = "example-developer-productivity-cluster"
-  engine     = "pg"
-  version    = "11"
-  size       = "db-s-1vcpu-1gb"
-  region     = "sfo2"
-  node_count = 1
-}
+# resource "digitalocean_database_cluster" "developer-productivity-cluster" {
+#   name       = "example-developer-productivity-cluster"
+#   engine     = "pg"
+#   version    = "11"
+#   size       = "db-s-1vcpu-1gb"
+#   region     = "sfo2"
+#   node_count = 1
+# }
 
 resource "random_pet" "name" {
-  length   = 4
+  length   = 1
 }
 
-# data "digitalocean_account" "account_info" {}
+data "digitalocean_database_cluster" "developer-productivity-cluster" {
+  name = "example-developer-productivity-cluster"
+}
+# output "database_output" {
+#   value = data.digitalocean_database_cluster.developer-productivity-cluster.uri
+#   sensitive = false
+# }
 
 # output "droplet_limit" {
 #     value = data.digitalocean_account.account_info.droplet_limit
