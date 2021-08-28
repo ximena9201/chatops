@@ -20,14 +20,14 @@ resource "digitalocean_database_db" "database-example" {
   name       = "database_name"
 }
 
-resource "digitalocean_database_cluster" "developer-productivity-cluster" {
-  # name       = "example-developer-productivity-cluster"
-  # engine     = "pg"
-  # version    = "11"
-  # size       = "db-s-1vcpu-1gb"
-  # region     = "sfo2"
-  # node_count = 1
-}
+# resource "digitalocean_database_cluster" "developer-productivity-cluster" {
+#   name       = "example-developer-productivity-cluster"
+#   engine     = "pg"
+#   version    = "11"
+#   size       = "db-s-1vcpu-1gb"
+#   region     = "sfo2"
+#   node_count = 1
+# }
 
 
 
