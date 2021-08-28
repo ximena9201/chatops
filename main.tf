@@ -17,7 +17,7 @@ provider "digitalocean" {
 
 resource "digitalocean_database_db" "database-example" {
   cluster_id = digitalocean_database_cluster.developer-productivity-cluster.id
-  name       = "${random_string}-database"
+  name       = "database-${random_string.random}"
 }
 
 resource "digitalocean_database_cluster" "developer-productivity-cluster" {
