@@ -1,5 +1,5 @@
 variable "do_token" {}
 
-variable data_product_name{
+variable "database_name" {
     type = string 
 }
