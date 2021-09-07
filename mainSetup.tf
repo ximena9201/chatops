@@ -13,12 +13,13 @@ module "databaseCluster" {
 
 module "database" {
   source          = "./modules/database"
-  cluster_name    = cluster_name.cluster
-  cluster_engine  = "pg"
-  cluster_region  = "sfo2"
-  cluster_size    = "db-s-1vcpu-1gb"
-  cluster_version = "11"
-  cluster_nodecount  = 1
+  cluster_id      = digitalocean_database_cluster.cluster.id
+  # cluster_name    = cluster_name.cluster
+  # cluster_engine  = "pg"
+  # cluster_region  = "sfo2"
+  # cluster_size    = "db-s-1vcpu-1gb"
+  # cluster_version = "11"
+  # cluster_nodecount  = 1
   database_name   = "ximedbexample"
   do_token        = var.do_token
   project_name    = "Test"
