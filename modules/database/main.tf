@@ -4,7 +4,6 @@ data "digitalocean_project" "development"{
 }
 
 resource "digitalocean_database_db" "database" {
-  # count = 1
   cluster_id = digitalocean_database_cluster.cluster.id
   name       = var.database_name
 }
@@ -28,7 +27,7 @@ resource "digitalocean_database_db" "database" {
 
 
 data "digitalocean_database_cluster" "cluster" {
-  name = "xime-cluster"
+  name = var.cluster_name
 }
 
 resource "digitalocean_project_resources" "barfoo" {
