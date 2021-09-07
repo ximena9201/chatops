@@ -11,5 +11,5 @@ variable "AWS_SECRET_ACCESS_KEY" {
 
 variable "bucket_name" {
     type        = string
-    description = "Bucket Name
+    description = "Bucket Name"
 }
