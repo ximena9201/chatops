@@ -54,6 +54,6 @@ variable "cluster_nodecount" {
 
 variable "project_name" {
     type        = string
-    description = "Project Name"
+    description = "Digital Ocean Project Name"
     default     = ""
 }

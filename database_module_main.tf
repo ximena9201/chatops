@@ -8,6 +8,7 @@ module "database" {
   cluster_nodecount  = 1
   database_name   = random_pet.name.id
   do_token        = var.do_token
+  project_name    = "Test"
 }
 
 
