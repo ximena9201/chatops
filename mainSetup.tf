@@ -13,7 +13,7 @@ module "databaseCluster" {
 
 module "database" {
   source          = "./modules/database"
-  cluster_name    = data.cluster_name
+  cluster_name    = data.digitalocean_database_cluster.cluster_name
   cluster_engine  = "pg"
   cluster_region  = "sfo2"
   cluster_size    = "db-s-1vcpu-1gb"
