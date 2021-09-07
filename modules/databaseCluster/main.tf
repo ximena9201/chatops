@@ -3,6 +3,10 @@ data "digitalocean_project" "development"{
   name = var.project_name
 }
 
+data "digitalocean_database_cluster" "cluster" {
+  name = var.cluster_name
+}
+
 resource "digitalocean_database_db" "database" {
   # count = 1
   cluster_id = digitalocean_database_cluster.cluster.id
@@ -14,7 +18,6 @@ resource "digitalocean_database_db" "database" {
 #   name       = "db-dev-${random_pet.name.id}"
 
 # }
-
 
 resource "digitalocean_database_cluster" "cluster" {
   name       = var.cluster_name
@@ -29,9 +32,7 @@ resource "digitalocean_database_cluster" "cluster" {
 #   length   = 1
 # }
 
-data "digitalocean_database_cluster" "cluster" {
-  name = var.cluster_name
-}
+
 
 resource "digitalocean_project_resources" "barfoo" {
   project = data.digitalocean_project.development.id
