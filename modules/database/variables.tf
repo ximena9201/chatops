@@ -51,8 +51,8 @@ variable "cluster_nodecount" {
 }
 
 
-variable "project_name" {
-    type        = string
-    description = "Digital Ocean Project Name"
-    default     = ""
-}
+# variable "project_name" {
+#     type        = string
+#     description = "Digital Ocean Project Name"
+#     default     = ""
+# }

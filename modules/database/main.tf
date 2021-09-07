@@ -1,7 +1,7 @@
 
-data "digitalocean_project" "do_project"{
-  name = var.project_name
-}
+# data "digitalocean_project" "do_project"{
+#   name = var.project_name
+# }
 
 resource "digitalocean_database_db" "database" {
   cluster_id = digitalocean_database_cluster.cluster.id
@@ -30,12 +30,12 @@ data "digitalocean_database_cluster" "cluster" {
   name = var.cluster_name
 }
 
-resource "digitalocean_project_resources" "barfoo" {
-  project = data.digitalocean_project.do_project.id
-  resources = [
-    digitalocean_database_cluster.cluster.urn
-  ]
-}
+# resource "digitalocean_project_resources" "barfoo" {
+#   project = data.digitalocean_project.do_project.id
+#   resources = [
+#     digitalocean_database_cluster.cluster.urn
+#   ]
+# }
 
 # terraform {
 #     required_providers {
