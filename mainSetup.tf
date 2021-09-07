@@ -12,7 +12,7 @@
 # }
 
 
-module AWS_S3Bucket {
+module "AWS_S3Bucket" {
   source          = "./modules/AWS/"
   bucket_name     = "ximebucketTF"
 
