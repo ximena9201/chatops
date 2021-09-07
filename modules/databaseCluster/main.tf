@@ -29,9 +29,9 @@ resource "digitalocean_database_cluster" "cluster" {
 #   length   = 1
 # }
 
-# data "digitalocean_database_cluster" "cluster" {
-#   name = "xime-cluster"
-# }
+data "digitalocean_database_cluster" "cluster" {
+  name = var.cluster_name
+}
 
 resource "digitalocean_project_resources" "barfoo" {
   project = data.digitalocean_project.development.id
