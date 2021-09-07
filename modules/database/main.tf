@@ -15,14 +15,14 @@ resource "digitalocean_database_db" "database" {
 # }
 
 
-# resource "digitalocean_database_cluster" "cluster" {
-#   name       = var.cluster_name
-#   engine     = var.cluster_engine
-#   version    = var.cluster_version
-#   size       = var.cluster_size
-#   region     = var.cluster_region
-#   node_count = var.cluster_nodecount
-# }
+resource "digitalocean_database_cluster" "cluster" {
+  name       = var.cluster_name
+  engine     = var.cluster_engine
+  version    = var.cluster_version
+  size       = var.cluster_size
+  region     = var.cluster_region
+  node_count = var.cluster_nodecount
+}
 
 
 
