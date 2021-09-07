@@ -16,20 +16,22 @@ resource "digitalocean_database_db" "database" {
 # }
 
 
-# resource "digitalocean_database_cluster" "cluster" {
-#   name       = var.cluster_name
-#   engine     = var.cluster_engine
-#   version    = var.cluster_version
-#   size       = var.cluster_size
-#   region     = var.cluster_region
-#   node_count = var.cluster_nodecount
+resource "digitalocean_database_cluster" "cluster" {
+  name       = var.cluster_name
+  engine     = var.cluster_engine
+  version    = var.cluster_version
+  size       = var.cluster_size
+  region     = var.cluster_region
+  node_count = var.cluster_nodecount
+}
+
+# resource "random_pet" "name" {
+#   length   = 1
 # }
 
-
-
-data "digitalocean_database_cluster" "cluster" {
-  name = "xime-cluster"
-}
+# data "digitalocean_database_cluster" "cluster" {
+#   name = "xime-cluster"
+# }
 
 resource "digitalocean_project_resources" "barfoo" {
   project = data.digitalocean_project.development.id
