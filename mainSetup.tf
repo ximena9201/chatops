@@ -1,6 +1,6 @@
 module "databaseCluster" {
   source          = "./modules/databaseCluster"
-  cluster_name    = "xime-cluster"
+  cluster_name    = "xime-cluster3"
   cluster_engine  = "pg"
   cluster_region  = "sfo2"
   cluster_size    = "db-s-1vcpu-1gb"
