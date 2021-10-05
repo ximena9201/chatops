@@ -1,4 +1,4 @@
-variable "do_token" {}
+# variable "do_token" {}
 
 #definir variables
 variable "cluster_name" {

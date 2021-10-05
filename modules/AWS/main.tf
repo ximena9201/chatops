@@ -1,6 +1,7 @@
-resource "aws_s3_bucket" "bucketT"{
-  bucket = var.bucket_name
-  acl = "private"
+resource "aws_s3_bucket" "bucket"{
+  bucket = var.bucket
+  acl = var.acl
+
 
   tags = {
     Name        = "My bucket"
