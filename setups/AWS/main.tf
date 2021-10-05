@@ -1,7 +1,7 @@
 
 module "s3_bucket" {
   source          = "../../modules/AWS"
-  bucket          = "ximenademo1122"
+  bucket          = "ximenademo11"
   acl             = "private"
 
 
