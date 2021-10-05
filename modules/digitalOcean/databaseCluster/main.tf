@@ -8,10 +8,15 @@ data "digitalocean_database_cluster" "cluster" {
 }
 
 resource "digitalocean_database_db" "database" {
-  # count = 1
+  count = 2
   cluster_id = digitalocean_database_cluster.cluster.id
   name       = var.database_name
+
+    # lifecycle {
+    #   create_before_destroy = true  
+    #   }
 }
+
 
 # resource "digitalocean_database_db" "database1" {
 #   cluster_id = digitalocean_database_cluster.cluster.id

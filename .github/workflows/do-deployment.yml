@@ -1,4 +1,4 @@
-name: Terraform Github Actions
+name: Terraform Github Actions Digital Ocean Cloud
 
 on: 
   push
