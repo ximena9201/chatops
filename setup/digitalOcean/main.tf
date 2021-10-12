@@ -7,7 +7,6 @@ module "databaseCluster" {
   cluster_version = "11"
   cluster_nodecount  = 1
   database_name   = "devdb4"
-  do_token        = var.do_token
   project_name    = "Test"
 }
 
