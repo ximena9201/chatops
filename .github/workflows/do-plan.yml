@@ -25,7 +25,7 @@ jobs:
 
       - name: "Terraform Plan"
         id: plan
-        run: terraform plan -input=false -var="do_token=${{ secrets.TF_API_TOKEN }}"
+        run: terraform plan -var="do_token=${{ secrets.TF_API_TOKEN }}"
         working-directory: ./setup/digitalOcean
 
 
