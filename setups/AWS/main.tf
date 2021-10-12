@@ -4,7 +4,4 @@ module "s3_bucket" {
   bucket          = "ximenademo11"
   acl             = "private"
 
-
-
-
 }
