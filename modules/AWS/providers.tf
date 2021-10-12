@@ -1,8 +1,8 @@
-terraform {
-  required_providers {
-    aws = "~> 2.59"
-  }
-}
+# terraform {
+#   required_providers {
+#     aws = "~> 2.59"
+#   }
+# }
 
 
 provider "aws" {
