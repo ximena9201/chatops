@@ -46,11 +46,3 @@ resource "digitalocean_project_resources" "barfoo" {
   ]
 }
 
-# terraform {
-#     required_providers {
-#         digitalocean = {
-#             source  = "digitalocean/digitalocean"
-#             version = "~> 2.0"
-#     }
-#   }
-# }
