@@ -1,10 +1,12 @@
 
 module "s3_bucket" {
   source          = "../../modules/AWS"
-  bucket          = "ximenademo11"
+  bucket          = "ximenademo12"
   acl             = "private"
 
 }
+
+
 
 terraform {
   backend "s3" {
