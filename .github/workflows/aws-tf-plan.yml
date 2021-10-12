@@ -1,7 +1,8 @@
 name: Terraform Plan AWS 
 
 on: 
-  push
+  pull_request:
+    
 
 jobs:
   terraform:
