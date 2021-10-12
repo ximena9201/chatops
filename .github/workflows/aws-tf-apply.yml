@@ -1,7 +1,8 @@
 name: Terraform Apply AWS 
 
 on: 
-  push
+  pull_request:
+    
 
 jobs:
   terraform:
