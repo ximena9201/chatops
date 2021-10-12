@@ -1,10 +1,13 @@
-# variable "AWS_ACCESS_KEY_ID" {
-#     type        = string
-#     description = "Access Key"}
+variable "aws_root_name" {
+  type        = string
+  description = "Root name prefix to use in resource name tags"
+}
 
-# variable "AWS_SECRET_ACCESS_KEY" {
-#     type        = string
-#     description = "Secret Key"}
+variable "aws_environment_name" {
+  type        = string
+  description = "Environment name to use in resource name tags"
+}
+
 variable "bucket" {
     type        = string
     description = "Bucket Name"
