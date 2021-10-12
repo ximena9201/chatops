@@ -1,3 +1,9 @@
+variable "do_token" {
+    type        = string
+    description = "Digital Ocean Token"
+    default     = ""
+
+}
 
 
 variable "cluster_name" {
