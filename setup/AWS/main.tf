@@ -1,7 +1,7 @@
 
 module "s3_bucket" {
   source          = "../../modules/AWS"
-  bucket          = "ximenademo12"
+  bucket          = "developerdemobucket"
   acl             = "private"
 
 }
