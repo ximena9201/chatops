@@ -6,6 +6,15 @@
 #     type        = string
 #     description = "Secret Key"}
 
+variable "tagName" {
+    type        = string
+    description = "Tag Name"
+}
+
+variable "tagEnv" {
+    type        = string
+    description = " Tag Environment"
+}
 
 variable "bucket" {
     type        = string
