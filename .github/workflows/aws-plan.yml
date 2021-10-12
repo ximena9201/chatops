@@ -34,30 +34,45 @@ jobs:
       #   uses: hashicorp/setup-terraform@v1.0.1
 
       # Init pulls credentials from the .aws/credentials file by default
-      - name: "Run - Terraform Init"
+      - name: "Terraform Init"
         run: terraform init -input=false
         working-directory: ./setup/AWS
 
       # The id value is used for reference in the comment step via "steps.plan.outputs.stdout"
       # Note: Color is disabled to prevent messy characters from appearing in the pull request comment
-      - name: "Run - Terraform Plan"
+      - name: "Terraform Plan"
         id: plan
         run: terraform plan -input=false -no-color
         working-directory: ./setup/AWS
 
       # Submit a comment with the plan output to the pull request
-      - name: "Run - Terraform Comment"
+      - name: "Terraform Comment"
         uses: actions/github-script@0.9.0
         env:
-          STDOUT: "```${{ steps.plan.outputs.stdout }}```"
+          PLAN: "```${{ steps.plan.outputs.stdout }}```"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+            #### Terraform Validation 🤖\`${{ steps.validate.outputs.stdout }}\`
+            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      
+            <details><summary>Show Plan</summary>
+            
+            \`\`\`\n
+            ${process.env.PLAN}
+            \`\`\`
+            
+            </details>
+            
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+              
             github.issues.createComment({
               # issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: process.env.STDOUT
+              body: output
             })
 
 
